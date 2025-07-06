@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2>Playlist</h2>
+        <div class="playlist">
+            <p><ion-icon name="musical-notes-outline"></ion-icon>Playlist</p>
+            <p><ion-icon name="radio-button-off-outline"></ion-icon>Oxirgi tinglanganlar</p>
+            <p><ion-icon name="radio-button-off-outline"></ion-icon>Tavsiya etiladi</p>
+        </div>
+        <div id="music_list">
+        </div>
+    </div>
+    <div class="main">
+        <nav>
+            <a href="salmat">Mening qo'shiqlarim</a>
+            <input id="search" type="text" placeholder="Qidiruv">
+            <ion-icon name="musical-notes-outline"></ion-icon>
+        </nav>
+        <div class="info">
+            <h1>Alan Walker</h1>
+            <p>e cupiditate harum exercitationem dolores sint voluptas, eius maiores veritatis molestiae.</p>
+        </div>
+
+        <div class="blurS">
+            <div class="scroolBtnBox">
+                <h3>Mashxur qo'shiqlar</h3>
+                <div>
+                    <button id="popularOld"><ion-icon name="arrow-back-outline"></ion-icon></button>
+                    <button id="popularNext"><ion-icon name="arrow-forward-outline"></ion-icon></button>
+                </div>
+            </div>
+            <div class="popular" id="popular">
+            </div>
+        </div>
+
+        <div class="popular_artist_wrapper">
+            <div class="scroolBtnBox">
+                <h3>Mashxur qo'shiqchilar</h3>
+                <div>
+                    <button id="popular_artistOld"><ion-icon name="arrow-back-outline"></ion-icon></button>
+                    <button id="popular_artisNext"><ion-icon name="arrow-forward-outline"></ion-icon></button>
+                </div>
+            </div>
+            <div class="popular_artist">
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bottom_bar">
+        <!-- From Uiverse.io by mrpumps31232 -->
+        <div class="loading-wave botmom_card">
+            <div class="loading-bar"></div>
+            <div class="loading-bar"></div>
+            <div class="loading-bar"></div>
+            <div class="loading-bar"></div>
+        </div>
+        <div class="botmom_card botom_music">
+            <img src="https://wallpapers.com/images/high/faded-xust67aurskyl7zn.webp" alt="images" id="botom_music_img">
+            <div>
+                <b id="title"></b>
+                <p id="answer"></p>
+            </div>
+        </div>
+        <div class="botmom_card players">
+            <ion-icon name="musical-notes-outline"></ion-icon>
+            <ion-icon id="oldmusic" name="play-skip-back-outline"></ion-icon>
+            <span id="playBnt">
+                <ion-icon name="play-outline"></ion-icon>
+            </span>
+            <ion-icon id="nextmusic" name="play-skip-forward-outline"></ion-icon>
+        </div>
+
+        <div class="botmom_card music_range">
+            <p id="duration">1:11</p>
+            <audio src="" id="bottomMusic"></audio>
+            <input type="range" min="0" value="0" step="1" id="progressBar" class="level">
+            <p id="currentTime">2:34</p>
+        </div>
+
+        <div class="botmom_card voiceRange">
+            <span id="volumeIcon"><ion-icon name="volume-high-outline"></ion-icon></span>
+            <input type="range" min="0" max="1" step="0.01" value="0.05" id="voiceRange" class="level">
+        </div>
+
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./music.js" type="module"></script>
+</body>
+
+</html>

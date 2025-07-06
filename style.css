@@ -1,0 +1,501 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.sidebar {
+    background-color: #1a2034;
+    width: 20%;
+    padding: 10px;
+    color: white;
+}
+
+nav {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav #search {
+    width: 500px;
+    border-radius: 20px;
+    border: 1px solid #6a6969;
+    outline: none;
+    padding: 16px;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    color: white;
+}
+
+nav ion-icon {
+    font-size: 30px;
+
+}
+
+.info {
+    width: 40%;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+.info p {
+    color: #c8c9c9;
+    line-height: 20px;
+}
+
+.main {
+    background-color: #0B131F;
+    flex: 1;
+    padding: 20px;
+    color: white;
+    background-image: url('https://wallpapers.com/images/high/alan-walker-4096-x-2160-background-e3m2sy0bwo8gna08.webp');
+    background-position: top;
+    background-size: cover;
+}
+
+.popular {
+    overflow: auto;
+    display: grid;
+    width: 1210px;
+    grid-template-columns: 200px 200px 200px 200px 200px 200px 200px 200px;
+    gap: 10px;
+    padding: 10px;
+    grid-auto-rows: 130px;
+}
+.popular .card {
+    background-color: rgb(59, 56, 75);
+    user-select: none;
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    position: relative;
+}
+
+.popular .card .popular_card_img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+
+}
+
+.popular .card .playbtn {
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    transition: 0.2s;
+    opacity: 0;
+}
+
+.popular .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(59, 56, 75, 0.7);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.2s;
+
+}
+
+.popular .card:hover::before {
+    opacity: 1;
+}
+
+.popular .card:hover .playbtn {
+    opacity: 1;
+}
+
+.popular .popuAnswerBox {
+    background: rgba(59, 56, 75, 0.7);
+    padding: 4px;
+    text-align: center;
+    width: 100%;
+    transform: translateY(20px);
+    transition: 0.2s;
+}
+
+.popular .card:hover .popuAnswerBox {
+    opacity: 0;
+}
+
+.popular .popuAnswerBox p {
+    font-size: 14px;
+    color: #f3f4f5;
+}
+
+.main button {
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.main button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.scroolBtnBox {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+}
+
+.scroolBtnBox h3 {
+    margin-left: 10px;
+}
+
+#popular.dragging {
+    cursor: grabbing;
+    scroll-behavior: auto !important;
+    /* tortishda smooth emas */
+}
+
+#popular_artist.dragging {
+    cursor: grabbing;
+    scroll-behavior: auto !important;
+    /* tortishda smooth emas */
+}
+
+/* -------------------------- POPULAR ARTIST ---------------------- */
+
+.popular_artist_wrapper {
+    margin-top: 50px;
+}
+
+.popular_artist {
+    padding: 4px;
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
+    gap: 10px;
+    grid-auto-rows: 100px;
+    margin-top: 10px;
+    width: 1210px;
+    overflow-x: auto;
+}
+
+.popular_artist .artist {
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 3px rgb(255, 255, 255);
+    user-select: none;
+}
+
+.popular_artist .artist img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+
+
+
+
+
+
+
+
+.playlist {
+    margin: 30px 0px;
+
+}
+
+.playlist p {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.playlist p:hover {
+    color: #5CD9DF;
+}
+
+.playlist p:first-child {
+    color: #5CD9DF;
+}
+
+#music_list {
+    overflow: auto;
+    height: 440px;
+    padding-right: 10px;
+}
+
+.musicbox {
+    padding: 10px;
+    margin-top: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leftBox {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.leftBox .index {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.rigthBox .playbtn {
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+.rigthBox .playbtn:active {
+    transform: scale(1);
+}
+
+.titleAndAnswer b {
+    font-size: 14px;
+}
+
+.titleAndAnswer p {
+    color: #85858b;
+    font-size: 14px;
+}
+
+.banner {
+    width: 44px;
+    border-radius: 2px;
+    height: 30px;
+    object-fit: cover;
+}
+
+.bottom_bar {
+    position: fixed;
+    background-color: #1A2034;
+    padding: 10px;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.bottom_bar .botmom_card {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.bottom_bar .botom_music {
+    display: flex;
+    gap: 10px;
+    overflow: hidden;
+    width: 250px;
+}
+
+.bottom_bar .botmom_card img {
+    width: 60px;
+    height: 40px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.bottom_bar .players {
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+    align-items: center;
+}
+
+.bottom_bar .players ion-icon {
+    cursor: pointer;
+}
+
+#playBnt {
+    display: flex;
+}
+
+.bottom_bar .music_range {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+    font-size: 14px;
+}
+
+.bottom_bar .voiceRange {
+    display: flex;
+    gap: 10px;
+    font-size: 28px;
+}
+
+.bottom_bar .voiceRange p {
+    font-size: 16px;
+}
+
+.botmom_card #answer {
+    margin-left: 4px;
+    font-size: 14px;
+    color: #c3c2c2;
+}
+
+.activeMusic {
+    color: #5CD9DF;
+    background-color: #262e45;
+}
+
+#volumeIcon {
+    display: flex;
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+
+
+.loading-wave {
+    width: 70px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.loading-bar {
+    width: 5px;
+    height: 6px;
+    margin: 0 5px;
+    background-color: #3498db;
+    border-radius: 5px;
+}
+
+.loading-bar:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.loading-bar:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.loading-bar:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+@keyframes loading-wave-animation {
+    0% {
+        height: 10px;
+    }
+
+    50% {
+        height: 50px;
+    }
+
+    100% {
+        height: 10px;
+    }
+}
+
+input {
+    --c: #3498db;
+    /* active color */
+    --g: 3px;
+    /* the gap */
+    --l: 3px;
+    /* line thickness*/
+    --s: 20px;
+    /* thumb size*/
+
+    width: 100%;
+    height: var(--s);
+    /* needed for Firefox*/
+    --_c: color-mix(in srgb, var(--c), #000 var(--p, 0%));
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+input:focus-visible,
+input:hover {
+    --p: 25%;
+}
+
+input:active,
+input:focus-visible {
+    --_b: var(--s)
+}
+
+/* chromium */
+input[type="range" i]::-webkit-slider-thumb {
+    height: var(--s);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    box-shadow: 0 0 0 var(--_b, var(--l)) inset var(--_c);
+    border-image: linear-gradient(90deg, var(--_c) 50%, #ababab 0) 0 1/calc(50% - var(--l)/2) 100vw/0 calc(100vw + var(--g));
+    -webkit-appearance: none;
+    appearance: none;
+    transition: .3s;
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+    height: var(--s);
+    width: var(--s);
+    background: none;
+    border-radius: 50%;
+    box-shadow: 0 0 0 var(--_b, var(--l)) inset var(--_c);
+    border-image: linear-gradient(90deg, var(--_c) 50%, #ababab 0) 0 1/calc(50% - var(--l)/2) 100vw/0 calc(100vw + var(--g));
+    -moz-appearance: none;
+    appearance: none;
+    transition: .3s;
+}
+
+@supports not (color: color-mix(in srgb, red, red)) {
+    input {
+        --_c: var(--c);
+    }
+}
