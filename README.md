@@ -28,4 +28,4 @@ Bu **JavaScript** yordamida yaratilgan oddiy, lekin funksional **Music Player** 
 
 1. Loyihani yuklab oling yoki klon qiling:
    ```bash
-   git clone https://github.com/username/music-player.git
+   git clone https://github.com/Rahmadjon0038/music-player.git
